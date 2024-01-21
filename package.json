@@ -1,0 +1,29 @@
+{
+  "name": "fragments-ui",
+  "private": "true",
+  "version": "1.0.0",
+  "description": "Simple web app for testing the back-end fragments microservice.",
+  "source": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arilloid/fragments-ui.git"
+  },
+  "keywords": [],
+  "author": "Arina Kolodeznikova",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "parcel": "^2.11.0",
+    "process": "^0.11.10",
+    "punycode": "^1.4.1",
+    "querystring-es3": "^0.2.1"
+  },
+  "dependencies": {
+    "aws-amplify": "^5.0.0"
+  }
+}
