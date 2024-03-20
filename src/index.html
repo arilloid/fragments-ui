@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Fragments UI</title>
     <link rel="stylesheet" href="https://unpkg.com/bamboo.css" />
+    <link rel="stylesheet" href="./styles.css">
     <script type="module" src="./app.js"></script>
   </head>
   <body>
@@ -15,8 +16,18 @@
       <h2>Hello <span class="username"></span>!</h2>
     </section>
     <section>
+      <label>Select fragment type:</label>
+      <select name="fragmentType" id="fragmentType" required>
+        <option value="text/plain">text/plain</option>
+        <option value="text/html">text/html</option>
+        <option value="text/markdown">text/markdown</option>
+        <option value="application/json">application/json</option>
+      </select>
       <textarea type="text" id="data" placeholder="Enter fragment's data to POST"></textarea>
       <button type="submit" id="postButton">POST</button>
+    </section>
+    <section>
+      <button type="submit" id="getMetadataButton"> GET All Metadata </button>
     </section>
   </body>
 </html>

@@ -28,6 +28,24 @@ export async function getUserFragments(user) {
   }
 }
 
+export async function getUserFragmentsMetadata(user) {
+  console.log('Requesting user fragments metadata...');
+  try {
+    const res = await fetch(`${apiUrl}/v1/fragments/?expand=1`, {
+      headers: user.authorizationHeaders(),
+    });
+
+    if (!res.ok) {
+      throw new Error(`${res.status} ${res.statusText}`);
+    }
+
+    const data = await res.json();
+    console.log('Successfully got user fragments metadata', { data });
+  } catch (err) {
+    console.log('Unable to call GET /v1/fragments/?expand=1', { err });
+  }
+}
+
 export async function postUserFragments(user, data, type) {
   console.log("Saving the fragment from request...");
   try {

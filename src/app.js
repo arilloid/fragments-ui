@@ -1,7 +1,7 @@
 // src/app.js
 
 import { Auth, getUser } from './auth';
-import { getUserFragments, postUserFragments } from './api';
+import { getUserFragments, postUserFragments, getUserFragmentsMetadata } from './api';
 
 async function init() {
   // Get our UI elements
@@ -9,6 +9,7 @@ async function init() {
   const loginBtn = document.querySelector('#login');
   const logoutBtn = document.querySelector('#logout');
   const postButton = document.querySelector('#postButton');
+  const getMetadataButton = document.querySelector('#getMetadataButton')
 
   // Wire up event handlers to deal with login and logout.
   loginBtn.onclick = () => {
@@ -25,8 +26,13 @@ async function init() {
   // Post the fragment
   postButton.onclick = () => {
     let data = document.querySelector('#data').value;
-    let type = 'text/plain';
+    let type = document.querySelector('#fragmentType').value;;
     postUserFragments(user,data,type);
+  }
+
+  // Get the list of expanded fragments for the authenticated user
+  getMetadataButton.onclick = () => {
+    getUserFragmentsMetadata(user);
   }
 
   // See if we're signed in (i.e., we'll have a `user` object)
