@@ -12,10 +12,19 @@
     <section>
       <nav><button id="login">Login</button> <button id="logout">Logout</button></nav>
     </section>
+
     <section hidden id="user">
       <h2>Hello <span class="username"></span>!</h2>
     </section>
+
     <section>
+      <label>Fragment's ID for PUT/GET/DELETE:</label>
+      <input type="text" id="id" placeholder="Enter fragment's ID"/>
+      <button type="submit" id="deleteButton"> DELETE fragment </button>
+    </section>
+
+    <section>
+      <strong>Post/Update fragment</strong>
       <label>Select fragment type:</label>
       <select name="fragmentType" id="fragmentType" required>
         <option value="text/plain">text/plain</option>
@@ -23,11 +32,33 @@
         <option value="text/markdown">text/markdown</option>
         <option value="application/json">application/json</option>
       </select>
-      <textarea type="text" id="data" placeholder="Enter fragment's data to POST"></textarea>
+      <textarea type="text" id="data" placeholder="Enter fragment's data to POST or UPDATE"></textarea>
       <button type="submit" id="postButton">POST</button>
+      <button type="submit" id="updateButton">UPDATE</button>
     </section>
+
     <section>
+      <label>Create/Update image fragment:</label>
+      <input type="file" name="file" id="file"/>
+      <br/>
+      <button id="uploadImageButton">UPLOAD</button>
+      <button id="updateImageButton">UPDATE</button>    
+    </section>
+
+    <section>
+      <br/>
       <button type="submit" id="getMetadataButton"> GET All Metadata </button>
+      <br/><br/>
+      <strong>GET requests by ID:</strong>
+      <br/>
+      <button type="submit" id="getByIdButton"> GET fragment </button>
+      <button type="submit" id="getInfoByIdButton"> GET fragment's metadata </button>
+    </section>
+
+    <section>
+      <strong>Fragment:</strong>
+      <div id="returnedData"></div>
+      <img id="image"/>
     </section>
   </body>
 </html>
